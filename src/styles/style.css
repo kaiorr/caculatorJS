@@ -23,7 +23,12 @@ html {
 }
 
 body {
-    margin: 0;
+    margin: 0 auto;
+    background: #e6ecf0;
+    font-family: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+    
 }
 
 h1 {
@@ -175,9 +180,11 @@ template {
 }
 
 .middle {
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
+    height: 90%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
 
  @font-face {
@@ -189,5 +196,34 @@ svg{
 }
 
 #calculadora-hcode {
-    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15%;
+    padding: 20px;
+    background: rgba(0, 0, 0, .1);
+}
+
+#hora {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.congrats {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 10px;
+    margin: 20px;
+}
+
+.congrats .congrats-name { 
+    color: #090909;
+    font-size: 20px;
+}
+
+.congrats .congrats-name a {
+    text-decoration: none;
+    font-weight: bold;
+    color:#2b2626;
+    
 }
