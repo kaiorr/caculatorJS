@@ -1,7 +1,7 @@
 {
   "name": "curso-javascript-projeto-calculadora-clone",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.html",
   "license": "MIT",
   "scripts": {
     "start": "live-server"
