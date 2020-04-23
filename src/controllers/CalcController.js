@@ -68,6 +68,25 @@ class CalcController {
 
     this._operation = [result, last]
 
+    this.setLastNumberToDisplay()
+
+  }
+
+  setLastNumberToDisplay() {
+
+    let lastNumber
+    
+    for (let i = this._operation.length-1; i >= 0; i--){
+
+      if (!this.isOperator(this._operation[i])){
+        lastNumber = this._operation[i];
+        break;
+      }
+
+    }
+
+    this.displayCalc = lastNumber
+
   }
 
   //verificar se é número e se for converte o número para string, para se tornar possível
@@ -75,7 +94,6 @@ class CalcController {
   addOperation(value) {
 
     
-
     if (isNaN(this.getLastOperation())) {
 
       if (this.isOperator(value)) {
@@ -84,11 +102,13 @@ class CalcController {
 
       } else if (isNaN(value)) {
 
-        console.log(value)
+        console.log('Outra Coisa', value)
 
       } else {
 
         this._operation.push(value)
+
+        this.setLastNumberToDisplay(value)
 
       }
 
@@ -103,6 +123,8 @@ class CalcController {
         let newValue = this.getLastOperation().toString() + value.toString()
 
         this.setLastOperation(parseInt(newValue))
+
+        this.setLastNumberToDisplay()
 
       }
 
